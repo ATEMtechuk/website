@@ -1,7 +1,7 @@
 @font-face {
   font-family: 'crimson text';
-  src: url('fonts/ttffonts/CrimsonText-Regular.ttf') format('truetype'),
-       url('fonts/woff2fonts/CrimsonText-Regular.woff2') format('woff2');
+  src: url('webfonts/CrimsonText-Regular.ttf') format('truetype'),
+       url('webfonts/CrimsonText-Regular.woff2') format('woff2');
   font-style: normal;
   font-weight: 400;
   /*font-display: swap;*/
@@ -9,8 +9,8 @@
 
 @font-face {
   font-family: 'crimson text';
-  src: url('fonts/ttffonts/CrimsonText-Bold.ttf') format('truetype'),
-       url('fonts/woff2fonts/CrimsonText-Bold.woff2') format('woff2');
+  src: url('webfonts/CrimsonText-Bold.ttf') format('truetype'),
+       url('webfonts/CrimsonText-Bold.woff2') format('woff2');
   font-style: normal;
   font-weight: 700;
   /*font-display: swap;*/
@@ -18,8 +18,8 @@
 
 @font-face {
   font-family: 'crimson text';
-  src: url('fonts/ttffonts/CrimsonText-Italic.ttf') format('truetype'),
-       url('fonts/woff2fonts/CrimsonText-Italic.woff2') format('woff2');
+  src: url('webfonts/CrimsonText-Italic.ttf') format('truetype'),
+       url('webfonts/CrimsonText-Italic.woff2') format('woff2');
   font-style: italic;
   font-weight: 400;
   /*font-display: swap;*/
@@ -27,8 +27,8 @@
 
 @font-face {
   font-family: 'crimson text';
-  src: url('fonts/ttffonts/CrimsonText-BoldItalic.ttf') format('truetype'),
-       url('fonts/woff2fonts/CrimsonText-BoldItalic.woff2') format('woff2');
+  src: url('webfonts/CrimsonText-BoldItalic.ttf') format('truetype'),
+       url('webfonts/CrimsonText-BoldItalic.woff2') format('woff2');
   font-style: italic;
   font-weight: 700;
   /*font-display: swap;*/
@@ -36,8 +36,8 @@
 
 @font-face {
   font-family: 'crimson text';
-  src: url('fonts/ttffonts/CrimsonText-SemiBold.ttf') format('truetype'),
-       url('fonts/woff2fonts/CrimsonText-SemiBold.woff2') format('woff2');
+  src: url('webfonts/CrimsonText-SemiBold.ttf') format('truetype'),
+       url('webfonts/CrimsonText-SemiBold.woff2') format('woff2');
   font-style: normal;
   font-weight: 600;
   /*font-display: swap;*/
@@ -45,11 +45,22 @@
 
 @font-face {
   font-family: 'crimson text';
-  src: url('fonts/ttffonts/CrimsonText-SemiBoldItalic.ttf') format('truetype'),
-       url('fonts/woff2fonts/CrimsonText-SemiBoldItalic.woff2') format('woff2');
+  src: url('webfonts/CrimsonText-SemiBoldItalic.ttf') format('truetype'),
+       url('webfonts/CrimsonText-SemiBoldItalic.woff2') format('woff2');
   font-style: italic;
   font-weight: 600;
   /*font-display: swap;*/
+}
+
+
+
+:root {
+  --body-color: #ffffff;
+  --nav-color: #ffffff;
+  --text-color: rgb(0, 0, 0);
+  --side-nav: rgb(82, 82, 186);
+  --search-bar: #;
+  --search-text: #;
 }
 
 strong {
@@ -62,15 +73,149 @@ em {
 
 body{
   font-family: 'crimson text';
-  color: white;
-  height: 3000;
-  padding-top: 80px;
-  background-color: rgb(28, 28, 28);
+  color: var(--text-color);
+  min-height: 100vh;
+  padding-top: 60px;
+  margin-left: 0px;
+  margin-right: 0px;
+  background-color: var(--body-color);
 }
 
 main{
   text-align: center;
 }
+
+nav{
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  height: 70px;
+  width: 100%;
+  background-color: var(--nav-color);
+}
+
+nav .nav-bar{
+  position: relative;
+  height: 100%;
+  max-width: 1000px;
+  width: 100%;
+  background-color: var(--nav-color);
+  margin: 0 auto;
+  padding: 0 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+nav .nav-bar .menu .nav-list li {
+  position: relative;
+}
+
+nav .nav-bar .menu .nav-list li .arrow{
+  display: inline-block;
+  margin-left: -10px;
+  color: var(--text-color);
+  font-size: 10px;
+  transition: all 0.2s ease;
+}
+
+nav .nav-bar .menu .nav-list li .arrow:hover{
+  cursor: pointer;
+  transform: rotate(180deg);
+}
+
+nav .nav-bar .menu .nav-list .sub-menu{
+  position: absolute;
+  top: 100%;
+  left: -16px;
+  white-space: nowrap;
+  line-height: 40px;
+  background-color: var(--body-color);
+  padding: 0px;
+  margin: 0px;
+  box-shadow: 0 1.5px 5px rgba(0,0,0,0.1);
+  border-radius: 0 0 4px 4px;
+  display: none;
+}
+
+
+nav .nav-bar .menu .nav-list .sub-menu li {
+  padding: 0 10px;
+}
+
+nav .nav-bar .menu .nav-list .sub-menu li a{
+  font-size: 15px;
+  font: 500;
+}
+
+nav .nav-bar .menu .nav-list li:hover > .arrow {
+  transform: rotate(180deg);
+}
+
+nav .nav-bar .menu .nav-list li:hover > .sub-menu {
+  display: block;
+}
+
+nav .nav-bar .sidebarOpen{
+  display: none;
+  color: var(--text-color);
+  font-size: 25px;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.menu .logo-toggle{
+  display: none;
+}
+
+.nav-bar .nav-list{
+  display: flex;
+  align-items: center;
+}
+
+.nav-bar .nav-list li{
+  list-style: none;
+  margin: 0 5px;
+}
+
+.nav-list li a{
+  position: relative;
+  text-decoration: none;
+  font-size: 17px;
+  font-weight: 500;
+  color: rgb(0, 0, 0);
+  padding: 10px;
+}
+
+.nav-list li a::before{
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  height: 4px;
+  width: 4px;
+  border-radius: 50%;
+  background-color: var(--text-color);
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+nav .nav-bar .menu .nav-list .sub-menu li a::before {
+  display: none;
+  content: none;
+}
+
+nav .nav-bar .menu .nav-list > li:nth-child(2) > a::before {
+  display: none;
+  content: none;
+}
+
+.nav-list li a:hover::before{
+  opacity: 1;
+}
+
 
 .header{
   display: flex;
@@ -85,7 +230,6 @@ main{
   left: 0;
   right: 0;
   height: 70;
-  border-bottom: solid 1px rgb(101, 144, 193);
   box-shadow: 0 4 10 rgba(0, 0, 0, 0.1);
 
   z-index: 1000;
@@ -99,21 +243,33 @@ main{
   cursor: pointer
 }
 
-.BurgerMenu{
-  height: 15px;
-  margin-right: 20px;
+
+
+.FutureText{
+  margin: 50px 20px -20px 75px;
+  display: flex;
+  word-spacing: 7px;
+  letter-spacing: 3px;
 }
 
-.BurgerMenu:hover{
-  cursor: pointer;
+.intro-text{
+  position: absolute;
+  top: 100px;
+  left: 50px;
+  display: flex;
+  flex-direction: column;
+}
+
+.ProductivityText{
+  font-size: 100px;
+  margin-top: 0;
 }
 
 .IntroDiv{
-  margin: 250px 20px 370px 20px;
+  margin: 100px 20px 30px 0px;
   display: flex;
   justify-content: center;
   flex-direction: column;
-  align-items: center;
 }
 
 .IntroTextandImageDiv{
@@ -125,7 +281,99 @@ main{
   margin-bottom: 20px;
   position: relative;
 }
-/*This is the div that contains the intro text and the model viewer*/
+
+.sectioner{
+  position: absolute;
+  top: -50px;
+  width: 0.5px;        
+  height: 390px;            
+  background: #222;      
+  margin: 0 auto 24px auto; 
+  border-radius: 2px;
+}
+
+.FirstMailingListDiv{
+  background-color: transparent;
+  margin-top: 150px;
+  margin-left: 900px;
+  width: 600px;
+  position: relative;
+  z-index: 20;
+}
+
+.HearFromUsText{
+  position: absolute;
+  top: -90px;
+  left: 60px;
+  font-size: 40px;
+  color: rgb(0, 0, 0);
+}
+
+.arrow-down{
+  position: absolute;
+  top: -22px;
+  left: 470px;
+  width: 50px;
+  height: 50px;
+} 
+
+.star{
+  position: absolute;
+  top: -90px;
+  left: 0px;
+  width: 50px;
+  height: 50px;
+}
+
+.star2{
+  position: absolute;
+  top: 10px;
+  left: -514px;
+  width: 50px;
+  height: 50px;
+}
+
+#first_mc_embed_signup{
+  background: rgb(128, 128, 128);
+  clear:left;
+  font:14px Helvetica,Arial,sans-serif;
+  color:rgb(0, 0, 0);
+  width: 600px;
+
+  clear:left; 
+  font:14px Helvetica,Arial,sans-serif; 
+  color:rgb(255, 255, 255); 
+  width: 600px;
+}
+
+.MailingSubmitbutton{
+  background-color: rgb(64, 60, 189);
+  color: white;
+  border: none;
+  cursor: pointer;
+  margin-bottom: 15px;
+  margin-top: 0px !important;
+  padding: 10px 15px;
+  border-radius: 6px;
+  width: 200px !important;
+}
+  
+.MailingSubmitbutton:hover{
+  background-color: rgb(50, 47, 148);
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2)
+}
+
+.first-section{
+  background-color: black;
+  width: 100%;
+  height: 285px;
+  margin-top: 0px;
+  margin-left: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+
 
 .IntroHeading{
   font-size: 50px;
@@ -143,11 +391,63 @@ main{
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  position: absolute;
+  top: 500px;
+}
+
+.StartJourney{
+  position: absolute;
+  color: var(--body-color);
+  font-size: 25px;
+  top: 80px;
+  font-weight: 400;
+}
+
+.WhiteDownArrow{
+  position: absolute;
+  top: 95px;
+  width: 50px;
+  height: 50px;
+}
+
+.boardwidthdiv:hover{
+  cursor: pointer;
 }
 
 .boardwidth{
   width: 100%;
   max-width: 800px;
+  z-index: 3;
+}
+
+.BoardStars{
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  object-fit: cover;
+}
+
+/* 
+.boardwidth:hover{
+  max-width: 900px;
+  transition: all 0.3s ease;
+  z-index: 10;
+} */
+
+.SecondSection{
+  height: 1500px;
+  width: 100%;
+  background: linear-gradient(#151b2c, #3a35c3);
+  position: relative;
+}
+
+.BackgroundStars{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
 .WhatIsStridaHeading{
@@ -315,12 +615,6 @@ For some reason the margin is not working*/
 
 
 
-
-
-
-
-
-
 .submit-button{
   background-color:rgb(114, 36, 36);
   /*Check why the background of this component doesn't show up*/
@@ -361,19 +655,137 @@ For some reason the margin is not working*/
   margin-bottom: 15px;
 }
 
-.MailingSubmitbutton{
-  background-color: rgb(117, 117, 117);
-  color: white;
-  border: none;
-  cursor: pointer;
-  margin-bottom: 15px;
-  padding: 10px 15px;
-  border-radius: 6px;
-  width: 20px;
+
+/* Responsive Design for Menu */
+
+@media (max-width: 790px){
   
-}
-  
-.MailingSubmitbutton:hover{
-  background-color: rgb(99, 99, 99);
-  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2)
+  nav .nav-bar .sidebarOpen{
+    display: block;
+  }
+
+  .menu{
+    position: fixed;
+    height: 100%;
+    width: 320px;
+    left: -100%;
+    top: 0;
+    background-color: var(--side-nav);
+    padding: 20px;
+    z-index: 100;
+    transition: all 0.4s ease;
+  }
+
+  nav.active .menu{
+    left: -0%;
+  }
+
+  nav.active .nav-bar .navLogo{
+    opacity: 0;
+    transition: all 0.3s ease;
+  }
+
+  nav .nav-bar .navLogo{
+    padding-right: 20px;
+  }
+
+  .menu .logo-toggle{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .logo-toggle .sidebarClose{
+    color: var(--body-color);
+    font-size: 24px;
+    cursor: pointer;
+    padding-top: 30px;
+  }
+
+  .nav-bar .nav-list{
+    flex-direction: column;
+    padding-top: 30px;
+    padding-left: 0px;
+  }
+
+  .nav-list li a::before{
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    height: 4px;
+    width: 4px;
+    border-radius: 50%;
+    background-color: var(--body-color);
+    opacity: 0;
+    transition: all 0.3s ease;
+  }
+
+  .nav-bar li a{
+    display: block;
+    margin-top: 20px;
+    color: var(--body-color);
+    letter-spacing: 1px;
+  }
+
+  nav .nav-bar .menu .nav-list .sub-menu {
+    position: static;      
+    display: none;         
+    box-shadow: none;   
+    margin: 0;
+    border-radius: 0;
+    line-height: 2;
+    white-space: normal;
+    background-color: rgba(255,255,255,0.08);
+    padding-left: 0px;
+  }
+
+  nav .nav-bar .menu .nav-list li:hover > .sub-menu {
+    display: block;       
+  }
+
+  nav .nav-bar .menu .nav-list .sub-menu li a {
+    font-size: 15px;
+    padding-top: 10px;
+    line-height: 10px;
+  }
+
+  nav .nav-bar .menu .nav-list li .arrow {
+    color: #fff; 
+    font-size: 14px;
+    margin-left: 0px; 
+    margin-top: 18px;
+    position: relative;
+    top: 1px; 
+  }
+
+  nav .nav-bar .menu .nav-list li {
+    display: block;
+  }
+
+  nav .nav-bar .menu .nav-list li:has(.sub-menu) {
+    display: block;
+    align-items: stretch;
+  }
+
+  .menu-link-row {
+    display: flex;
+    align-items: center;
+    gap: 0px;
+    padding-left: 40px;
+  }
+
+  nav .nav-bar .menu .nav-list li:hover > .sub-menu {
+    display: block;
+  }
+
+  .nav-list li a::before{
+    display: none;
+    content: none;
+  }
+
+
+
 }

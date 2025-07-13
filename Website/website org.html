@@ -2,52 +2,126 @@
 
 <html lang="en">
   <head>
-    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
     <title>
       Strida - Smart Calendar Display
     </title>
 
     <link rel="stylesheet" href="styles/styles.css">
-
+    <link rel="stylesheet" href="styles/all.css">
+    
 
     <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js">
     </script>
-
-    <!--<script src="https://kit.fontawesome.com/yourkit.js" crossorigin="anonymous"></script>-->
 
   </head>
   <body>
     
     <!--Header Section-->
     
-    <header class="header">
-      <!--Logo links to Google until we get our own domain-->
-      <div>
-        <a href="https://www.googe.com">
-          <img src="images/logo/penup_20250402_175204-removebg-preview.png" class="HeaderLogo" alt="Logo">
+  
+    <!--<header class="header"></header>-->
+      
+
+    <nav>
+      <div class="nav-bar">
+
+        <i class="fa-solid fa-bars-staggered sidebarOpen"></i>
+        
+        <a href="#">
+          <img src="images/logo/penup_20250402_175204-removebg-preview.png" class="HeaderLogo navLogo" alt="Logo">
         </a>
-      </div>
 
-      <div>
-        <img src="images/Icons/Burger Menu.png" class="BurgerMenu" alt="Burger Menu" id="burger-menu">
-        <a>
-      </div>
-    </header>
+        <div class ="menu">
+          <div class="logo-toggle">
+            <i class="fa-solid fa-xmark sidebarClose"></i>
+          </div>
 
+          <ul class ="nav-list">
+            <li><a href="#">Home</a></li>
+            <li>
+              <div class="menu-link-row">
+                <a href="#">Features</a>
+                <i class="fa-solid fa-chevron-down arrow"></i>
+              </div>
+              <ul class="sub-menu">
+                <li><a href="#">SmartPath</a></li>
+                <li><a href="#">Calendar 2.0</a></li>
+                <li><a href="#">Flow</a></li>
+                <li><a href="#">And More...</a></li>
+              </ul>
+            </li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Support</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
     <main>
 
       <div class="IntroDiv">
         <div class="IntroTextandImageDiv">
-          <h1 class="IntroHeading">The future of productivity...</h1>
+          <div class="intro-text">
+            <h1 class="FutureText">The future of</h1>
+            <h1 class="ProductivityText">Productivity...</h1>
+          </div>
 
-          <!--<div class="TopLeft1Div"><img src="images/Product Images/TopLeft.png" class="TopLeft1"></div>-->
+          <hr class="sectioner"></hr>
+
+<!--mailing list at top of page-->
+
+      <div id="mc_embed_shell" class="FirstMailingListDiv">
+        <span class="HearFromUsText">Want to hear more from us?</span>
+        <img src="Images/Icons/R.jpg" alt="star" class="star">
+        <img src="Images/Icons/star-icon-vector-illustration-template_910989-1368.jpg" alt="star2" class="star2">
+        <img src="images/Icons/33880_down-arrow-png.png" class="arrow-down" alt="Arrow Down">
+        <link href="//cdn-images.mailchimp.com/embedcode/classic-061523.css" rel="stylesheet" type="text/css">
+        <div id="mc_embed_signup">
+          <form action="https://gmail.us17.list-manage.com/subscribe/post?u=7966b1af6a3800a6deb2b494b&amp;id=223e9a62f5&amp;f_id=00b4c2e1f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank">
+            <div id="mc_embed_signup_scroll"><h2></h2>
+              <div class="mc-field-group"><label for="mce-EMAIL">Email Address <span class="asterisk">*</span></label><input type="email" name="EMAIL" class="required email" id="mce-EMAIL" required="" value=""></div>
+              <div id="mce-responses" class="clear foot">
+                <div class="response" id="mce-error-response" style="display: none;"></div>
+                <div class="response" id="mce-success-response" style="display: none;"></div>
+              </div>
+              <div aria-hidden="true" style="position: absolute; left: -5000px;">
+                <!--real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                <input type="text" name="b_7966b1af6a3800a6deb2b494b_223e9a62f5" tabindex="-1" value="">
+              </div>
+              <div class="optionalParent">
+                <div class="clear foot">
+                    <input type="submit" name="subscribe" id="mc-embedded-subscribe" class="MailingSubmitbutton" value="Join Mailing List">
+                    <a href="http://eepurl.com/jdHsNA" title="Mailchimp - email marketing made easy and fun"></a></p>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      <script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script><script type="text/javascript">(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';fnames[3]='ADDRESS';ftypes[3]='address';fnames[4]='PHONE';ftypes[4]='phone';fnames[5]='BIRTHDAY';ftypes[5]='birthday';fnames[6]='COMPANY';ftypes[6]='text';}(jQuery));var $mcj = jQuery.noConflict(true);</script></div>
+          
+      
+      
+      <div class="first-section">
+        <img src="Images/Others/stars.png" class="BoardStars" alt="Stars">    
+        </div>
 
           <div class="boardwidthdiv">
+            
             <img src="images/Product Images/widthcropnobg.png" class="boardwidth" alt="Board Width">
+            <span class="StartJourney">Start Your Journey</span>
+            <img src="Images/Icons/white-down-arrow-icon-7.jpg" alt="WhiteDownArrow" class="WhiteDownArrow">
           </div>
 
         </div>
       </div>
+
+      <section class="SecondSection">
+        <img src="Images/Others/stars.png" class="BackgroundStars" alt="Stars">
+      </section>
 
       <div class="WhatIsStridaDiv">
         <h2 class="WhatIsStridaHeading">
@@ -155,7 +229,7 @@
       <!--<input type="text" placeholder="Join our Mailing List" class="mailing-list" id="mailing-list" name="mailing-list">-->
 
     
-      <div id="mc_embed_shell" class="MailingListDiv">
+      <!--<div id="mc_embed_shell" class="MailingListDiv">
         <link href="//cdn-images.mailchimp.com/embedcode/classic-061523.css" rel="stylesheet" type="text/css">
         <style type="text/css">
               #mc_embed_signup{background: rgb(28, 28, 28); clear:left; font:14px Helvetica,Arial,sans-serif; color:rgb(255, 255, 255); width: 600px;}
@@ -185,7 +259,7 @@
       </form>
       </div>
       <script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script><script type="text/javascript">(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';fnames[3]='ADDRESS';ftypes[3]='address';fnames[4]='PHONE';ftypes[4]='phone';fnames[5]='BIRTHDAY';ftypes[5]='birthday';fnames[6]='COMPANY';ftypes[6]='text';}(jQuery));var $mcj = jQuery.noConflict(true);</script></div>
-      
+    -->
 
       <div class="KickstarterSupportDiv">
         <img src="Images/Others/kickstarter-support-nobg.png" class="KickstarterSupport" alt="Kickstarter Support">
@@ -193,5 +267,7 @@
       
     </main>
 
+    <script src="js/website.js"></script>
+    
   </body>
 </html>
